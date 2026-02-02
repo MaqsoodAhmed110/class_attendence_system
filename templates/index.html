@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Attendance System</h1>
+    </header>
+    <main>
+        <section class="upload-section">
+            <h2>Upload an Image</h2>
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" accept="image/*" required>
+                <button type="submit">Upload and Process</button>
+            </form>
+        </section>
+
+        {% if predictions %}
+        <section id="results">
+            <h2>Detection and Classification Results</h2>
+            <div class="results-list">
+                <ul>
+                    {% for pred in predictions %}
+                    <li>
+                        <strong>Bounding Box:</strong> {{ pred.bounding_box }}<br>
+                        <strong>Class:</strong> {{ pred.class }}<br>
+                        <strong>Confidence:</strong> {{ pred.confidence }}<br>
+                        <strong>Timestamp:</strong> {{ pred.timestamp }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
+    </main>
+    <footer>
+        <p>© 2024 Attendance System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
