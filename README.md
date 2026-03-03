@@ -164,9 +164,9 @@ Feel free to improve this project by:
 
 This project is for educational purposes at GIKI University (DNN AI341 Course).
 
-## 👨‍💻 Author
+## 👨‍💻 Authors
 
-Maqsood Data
+Maqsood and Karrar
 GIKI 5th Semester - DNN AI341 Project
 
 ---
